@@ -16,7 +16,7 @@ export const AddBlog = () => {
     const { register, handleSubmit, reset, formState: { errors }, } = useForm()
 
     const onSubmit = async (formInfo) => {
-        console.log(formInfo)
+        // console.log(formInfo)
 
         try {
             const { data } = await axiosSecure.post('/blogs', formInfo)

@@ -23,6 +23,7 @@ import { QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import { BlogDetails } from './Pages/BlogDetails';
 import { useAxiosSecure } from './Hooks/useAxiosSecure';
 import { Update } from './Pages/Update';
+import { WishCardDetails } from './Pages/WishCardDetails';
 
 const axiosSecure = useAxiosSecure()
 
@@ -70,6 +71,11 @@ const router = createBrowserRouter([
       {
         path: "/wishlist",
         element: <PrivateRoute><WishList></WishList></PrivateRoute>
+      },
+      {
+        path: "/wblogs/:id",
+        element: <PrivateRoute><WishCardDetails></WishCardDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:8000/wishlists/${params.id}`)
       },
 
     ]

@@ -143,8 +143,8 @@ export const Navbar = () => {
                                                         <div>
                                                             <img className='rounded-full h-8 w-8' src={user.photoURL} />
                                                         </div> :
-                                                        <Link><FaUserCircle className='w-full h-full' />
-                                                        </Link>
+                                                        <FaUserCircle className='w-full h-full' />
+                                                        
 
                                                 }
 

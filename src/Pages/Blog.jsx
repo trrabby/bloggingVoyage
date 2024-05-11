@@ -3,14 +3,43 @@ import { ContextApi } from '../Providers/ContextProvider';
 import { Link } from 'react-router-dom';
 import { TbCategory, TbListDetails } from 'react-icons/tb';
 import { MdDeleteOutline } from 'react-icons/md';
+import { MdFormatListBulletedAdd } from "react-icons/md";
+import { useAxiosSecure } from '../Hooks/useAxiosSecure';
+import toast from 'react-hot-toast';
 
 export const Blog = ({ item }) => {
 
-    
-    const { _id, category, img_url, long_description, short_description, title } = item;
+   const { _id, category, img_url, short_description, title, email } = item;
     // console.log(item)
+    const axiosSecure = useAxiosSecure()
 
-    const { handleDelete } = useContext(ContextApi)
+    const { user, handleDelete } = useContext(ContextApi)
+
+    const wishList = async () =>{
+
+       const whishData = {...item, 'wishListersEmail': user?.email}
+       delete whishData._id
+
+    //    console.log(whishData)
+       
+
+        try {
+            const { data } = await axiosSecure.post('/wishlist', whishData)
+            if (data.insertedId) {
+                toast.success('Added to Wishlist')
+                // navigate('/allBlogs');
+                // reset();
+            }
+            else{
+                toast.error('Already added to wishlist')
+            }
+            
+        }
+        catch (error) {
+           console.log(error.code)
+        }
+
+    }
 
     return (
 
@@ -33,17 +62,20 @@ export const Blog = ({ item }) => {
                     <hr />
 
                     <p className='flex items-center gap-2 text-right mr-2 font-semibold'> <TbCategory /> Category: {category}</p>
+                    <p className='flex items-center gap-2 text-right mr-2 font-semibold'> <TbCategory /> {email}</p>
 
 
                 </div>
 
-                <div className='flex justify-around w-full'>
+                <div className='flex justify-around w-full py-2'>
                     <Link to={`/blogs/${_id}`}>
                         <button className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300  border-none'><TbListDetails />View Details</button>
                     </Link>
-                    {/* <Link to={`/update/${_id}`}>
-                        <button className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300 border-none'><GrDocumentUpdate />Update</button>
-                    </Link> */}
+
+                    
+                    
+                    <button onClick={wishList} className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300  border-none'><MdFormatListBulletedAdd />Add to Wishlist</button>
+
                     <button onClick={() => handleDelete(_id)} className='btn btn-outline text-red-600 hover:bg-red-500 font-bold hover:scale-105 hover:duration-300 border-none'><MdDeleteOutline />Delete</button>
 
                 </div>

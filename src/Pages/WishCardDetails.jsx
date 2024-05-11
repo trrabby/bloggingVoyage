@@ -1,23 +1,16 @@
-import React, { useContext } from 'react'
-import { ContextApi } from '../Providers/ContextProvider';
-
-import { TbCategory, TbListDetails } from 'react-icons/tb';
+import React from 'react'
+import { TbCategory } from 'react-icons/tb';
 import { Link, useLoaderData } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 
-export const BlogDetails = () => {
-
+export const WishCardDetails = () => {
     const item = useLoaderData()
     // console.log(item)
-    const { _id, category, email, img_url, long_description, short_description, title } = item;
+    const { _id, category, img_url, long_description, short_description, title } = item;
 
-    const { user } = useContext(ContextApi)
 
-    const matchedUser = user.email == email
+  return (
 
-    console.log(matchedUser)
-    return (
-        <div className='mt-5'>
+    <div className='mt-5'>
             {/* <Helmet>
                 <title>Blogging Voyage | Blog Details{_id}</title>
             </Helmet> */}
@@ -44,28 +37,19 @@ export const BlogDetails = () => {
                         <p className='flex items-center gap-2 text-right mr-2 font-semibold'> <TbCategory /> Category: {category}</p>
 
                         <div className=' flex items-center gap-2 text-justify mr-2 font-semibold'>{long_description}</div>
-                        {/* <div className=' flex items-center gap-2 text-justify mr-2 font-semibold'>{email}</div> */}
-
-                    </div>
-
-                    <div className='flex justify-center items-center space-y-2 w-full'>
-
-                        {
-                            matchedUser && <Link to={`/update/${_id}`}>
-                                <button className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300 border-none'>Update</button>
-                            </Link>
-                        }
 
                     </div>
 
 
+                    {/* <div className='flex justify-center items-center space-y-2 w-full'>
+
+                        <Link to={`/update/${_id}`}>
+                            <button className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300 border-none'>Update</button>
+                        </Link>
+
+                    </div> */}
                 </div>
-
-            </div>
-            <div className='space-y-2'>
-                <h1 className='text-center lg:text-2xl text-xl font-bold'>Comment Section</h1>
-                <p className='text-lg text-center'>Leave your valuable comments here.</p>
             </div>
         </div>
-    )
+  )
 }

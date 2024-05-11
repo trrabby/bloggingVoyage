@@ -2,6 +2,9 @@ import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopu
 import React, { createContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { app } from '../firebase.config';
+import axios from 'axios';
+import { useAxiosSecure } from '../Hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 export const ContextApi = createContext(null);
 
@@ -11,7 +14,8 @@ export const ContextProvider = ({ children }) => {
 
     const [err, setErr] = useState(null)
     const [user, setUser] = useState(null);
-   
+
+
 
     const auth = getAuth(app);
 
@@ -66,8 +70,10 @@ export const ContextProvider = ({ children }) => {
         return signOut(auth)
     }
 
-    const handleDelete = (id) => {
-        Swal.fire({
+    const axiosSecure = useAxiosSecure()
+
+    const handleDelete = async (id) => {
+        const shouldDelete = await Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
             icon: "warning",
@@ -75,34 +81,45 @@ export const ContextProvider = ({ children }) => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`https://server-site-gamma-indol.vercel.app/items/${id}`, {
-                    method: "delete"
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
-                        if (data.deletedCount > 0) {
-                            toast.success('Deleted Successfully')
-                            // const remaining = products.filter(item => item._id !== id);
-                            // setProducts(remaining);
+        })
+        console.log(shouldDelete)
 
-                        }
-                    })
+        if (shouldDelete.isConfirmed) {
 
+            const { data } = await axiosSecure.delete(`/blogs/${id}`)
+
+            if (data.deletedCount > 0) {
+                toast.success('Deleted Successfully')
                 Swal.fire({
                     title: "Deleted!",
                     text: "Your file has been deleted.",
                     icon: "success"
                 });
             }
-        });
-}
-    const allBlogs = async ()=>{
-        const {data}= await axios(`${import.meta.env.url}/blogs`)
+            console.log(data)
+        }
+
+
+        // fetch(`https://server-site-gamma-indol.vercel.app/items/${id}`, {
+        //     method: "delete"
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data)
+        //         if (data.deletedCount > 0) {
+                    
+        //             // const remaining = products.filter(item => item._id !== id);
+        //             // setProducts(remaining);
+
+        //         }
+        //     })
+
+
+
+
     }
-    
+
+
 
     const ContextValue = {
         auth,

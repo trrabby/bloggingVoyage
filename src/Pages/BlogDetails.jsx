@@ -8,6 +8,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useAxiosSecure } from '../Hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
 
 export const BlogDetails = () => {
 
@@ -15,52 +16,58 @@ export const BlogDetails = () => {
     // console.log(item)
     const { _id, category, email, img_url, long_description, short_description, title } = item;
     const { user } = useContext(ContextApi)
-    const axiosSecure= useAxiosSecure()
+    const axiosSecure = useAxiosSecure()
     const matchedUser = user.email == email
 
     const { data: wishlist = [], isLoading, isError, error, refetch, } = useQuery({
         queryKey: ['allBlogs'],
-        queryFn: () => "",
-        refetchOnMount: true,
-      })
+        // queryFn: () => "",
+    })
 
-      const blogsData = async () => {
+    const blogsData = async () => {
         const { data } = await axiosSecure(`/wishlist/${user?.email}`)
         return data
-      }
-    
-     
+    }
+
+
 
     // console.log(matchedUser)
 
-    const handleComment = async (e)=>{
+    const handleComment = async (e) => {
         e.preventDefault();
-        const commentData = e.target.textarea.value;
+        let commentData = e.target.textarea.value;
         const comment = {
-            'commentData' : commentData,
-            'postId' : _id,
+            'commentData': commentData,
+            'postId': _id,
             'commenter_email': user?.email,
             'commenter_name': user?.displayName,
             'commenter_pic': user?.photoURL,
         }
         // console.log(comment)
 
-        try {
-            const { data } = await axiosSecure.post('/comments',comment )
-            if (data.insertedId) {
-                toast.success('Commented Successfully')
-                // navigate('/allBlogs');
-                // reset();
+        if(!user.email===email){
+
+            try {
+                const { data } = await axiosSecure.post('/comments', comment)
+                if (data.insertedId) {
+                    toast.success('Commented Successfully')
+                    // navigate('/allBlogs');
+                    e.target.textarea.value="";
+                }
+                else {
+                    toast.error('Comment Unsuccessfull')
+                }
+    
             }
-            else{
-                toast.error('Comment Unsuccessfull')
+            catch (error) {
+                console.log(error)
             }
-            
+
         }
-        catch (error) {
-           console.log(error.code)
-        }
-           
+        toast.error("You cann't comment on your own blog")
+
+        
+
     }
     return (
         <div className='mt-5'>
@@ -116,7 +123,7 @@ export const BlogDetails = () => {
                     <div className='w-6/12 border-r-2 border-accent'>
                         <Card className="mx-auto max-w-lg">
                             <form onSubmit={handleComment}
-                               
+
                             >
                                 <div className="flex flex-col gap-2">
                                     <label htmlFor="description" className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">

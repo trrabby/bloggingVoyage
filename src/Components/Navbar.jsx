@@ -69,7 +69,7 @@ export const Navbar = () => {
                                 <NavLink className={({ isActive }) => isActive ?
                                     'text-primary font-extrabold p-2' : 'hover:text-primary p-2 font-extrabold'} to={'/allBlogs'}>All Blogs</NavLink>
 
-                                <NavLink className={({ isActive }) => isActive ?
+                                <NavLink onClick={handleToast} className={({ isActive }) => isActive ?
                                     'text-primary font-extrabold p-2' : 'hover:text-primary p-2 font-extrabold'} to={'/featuredBlogs'}>Featured Blogs</NavLink>
 
                                 <NavLink onClick={handleToast} className={({ isActive }) => isActive ? 'text-primary font-extrabold p-2' : 'hover:text-primary p-2 font-extrabold'} to={'/wishlist'}>Wishlist</NavLink>
@@ -95,7 +95,7 @@ export const Navbar = () => {
                             <NavLink className={({ isActive }) => isActive ?
                                 'text-primary font-extrabold p-2' : 'hover:text-primary p-2 font-extrabold'} to={'/allBlogs'}>All Blogs</NavLink>
 
-                            <NavLink className={({ isActive }) => isActive ?
+                            <NavLink onClick={handleToast} className={({ isActive }) => isActive ?
                                 'text-primary font-extrabold p-2' : 'hover:text-primary p-2 font-extrabold'} to={'/featuredBlogs'}>Featured Blogs</NavLink>
 
                             <NavLink onClick={handleToast} className={({ isActive }) => isActive ? 'text-primary font-extrabold p-2' : 'hover:text-primary p-2 font-extrabold'} to={'/wishlist'}>Wishlist</NavLink>

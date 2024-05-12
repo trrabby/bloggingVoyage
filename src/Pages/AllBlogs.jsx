@@ -26,10 +26,9 @@ export const AllBlogs = () => {
   // console.log(filter)
 
 
-  const { data: blogs = [], isLoading, isError, error, refetch, } = useQuery({
+  const { data: blogs=[], isLoading, isError, error, refetch, } = useQuery({
     queryKey: ['allBlogs'],
     queryFn: () => blogsData(),
-    refetchOnMount: true,
   })
 
   const blogsData = async () => {
@@ -171,7 +170,7 @@ export const AllBlogs = () => {
 
             </Blog>) :
 
-            blogs.map(item =>
+            blogs?.map(item =>
               <Blog item={item} key={item._id}>
 
               </Blog>)

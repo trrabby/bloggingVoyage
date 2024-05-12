@@ -69,7 +69,7 @@ export const Blog = ({ item }) => {
 
                 <div className='flex justify-around w-full py-2'>
                     <Link to={`/blogs/${_id}`}>
-                        <button className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300  border-none'><TbListDetails />View Details</button>
+                    <button onClick={()=>!user && toast.error('login requried to proceed')} className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300  border-none'><TbListDetails />View Details</button>
                     </Link>
 
                     

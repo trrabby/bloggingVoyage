@@ -78,7 +78,7 @@ export const AddBlog = () => {
                                 {errors.title && <span className='text-red-600 text-xs'>This field is required</span>}
 
                                 <label className="input input-bordered flex items-center gap-2 animate__animated animate__flipInX animate__slow	1s">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className='w-5 h-5' enable-background="new 0 0 24 24" viewBox="0 0 24 24" id="image"><path d="M13.5,6C12.7,6,12,6.7,12,7.5S12.7,9,13.5,9S15,8.3,15,7.5S14.3,6,13.5,6z M19,2H5C3.3,2,2,3.3,2,5v14c0,1.7,1.3,3,3,3h14
+                                    <svg xmlns="http://www.w3.org/2000/svg" className='w-5 h-5' enableBackground="new 0 0 24 24" viewBox="0 0 24 24" id="image"><path d="M13.5,6C12.7,6,12,6.7,12,7.5S12.7,9,13.5,9S15,8.3,15,7.5S14.3,6,13.5,6z M19,2H5C3.3,2,2,3.3,2,5v14c0,1.7,1.3,3,3,3h14
 	                                c1.7,0,3-1.3,3-3V5C22,3.3,20.7,2,19,2z M20,13.9L18.1,12c-1.2-1.1-3.1-1.1-4.2,0L13,12.9L10.1,10c-1.2-1.1-3.1-1.1-4.2,0L4,11.9V5
 	                                c0-0.6,0.4-1,1-1h14c0.6,0,1,0.4,1,1V13.9z"></path></svg>
                                     <input className='text-black w-full' type="text" name='img_url' placeholder="Thumbnail Image URL"

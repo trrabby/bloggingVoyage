@@ -45,7 +45,7 @@ export const Blog = ({ item }) => {
 
         // <div></div>
         <div>
-            <div data-aos="zoom-out" data-aos-duration='800' className="flex flex-col items-stretch flex-grow whitespace- card card-compact w-full border shadow-accent shadow-sm rounded-2xl  hover:bg-slate-100 cursor-text hover:duration-300 h-full">
+            <div data-aos="zoom-out" data-aos-duration='800' className="flex flex-col items-stretch flex-grow whitespace- card card-compact w-full border shadow-accent shadow-sm rounded-2xl bg-[#193c57a1] hover:shadow-lg hover:shadow-primary cursor-text hover:duration-300 h-full px-2 text-white">
                 <div><img className='md:h-52 h-44 lg:h-56  
                     w-full rounded-lg p-2 lg:p-5 hover:scale-105 hover:duration-1000 object-center' src={img_url} alt="" /></div>
                 <div className="card-body p-2 flex flex-grow items-stretch flex-col">
@@ -54,7 +54,7 @@ export const Blog = ({ item }) => {
                     </h2>
 
                     <div className='font-semibold'>
-                        {short_description.length > 100 ?
+                        {short_description?.length > 100 ?
                             <p>{short_description.slice(0, 97)}<Link to={`/blogs/${_id}`} className='text-blue-500'>...</Link></p>
                             : short_description}
                     </div>
@@ -69,14 +69,14 @@ export const Blog = ({ item }) => {
 
                 <div className='flex justify-around w-full py-2'>
                     <Link to={`/blogs/${_id}`}>
-                    <button onClick={()=>!user && toast.error('login requried to proceed')} className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300  border-none'><TbListDetails />View Details</button>
+                    <button onClick={()=>!user && toast.error('login requried to proceed')} className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300   bg-primary hover:border-primary'><TbListDetails />View Details</button>
                     </Link>
 
                     
                     
-                    <button onClick={wishList} className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300  border-none'><MdFormatListBulletedAdd />Add to Wishlist</button>
+                    <button onClick={wishList} className='btn btn-outline text-white hover:bg-accent font-bold hover:scale-105 hover:duration-300  border-primary hover:border-primary'><MdFormatListBulletedAdd />Add to Wishlist</button>
 
-                    <button onClick={() => handleDelete(_id)} className='btn btn-outline text-red-600 hover:bg-red-500 font-bold hover:scale-105 hover:duration-300 border-none'><MdDeleteOutline />Delete</button>
+                    {/* <button onClick={() => handleDelete(_id)} className='btn btn-outline text-red-600 hover:bg-red-500 font-bold hover:scale-105 hover:duration-300 border-none'><MdDeleteOutline />Delete</button> */}
 
                 </div>
             </div>

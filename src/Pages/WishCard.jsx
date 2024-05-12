@@ -78,7 +78,7 @@ export const WishCard = ({data, refetch}) => {
                         >
                             Details
                         </Link>
-                        <button onClick={() => handleDelete2(_id)} className="bg-accent px-5 py-3 text-center text-xs font-bold uppercase text-white transition hover:bg-red-500 hover:text-black duration-700 flex gap-2"><MdDeleteOutline />Remove</button>
+                        <button onClick={() => handleDelete2(_id)} className="bg-accent px-5 py-3 text-center text-xs font-bold uppercase text-white transition hover:bg-red-500 hover:text-black duration-700 flex items-center gap-2"><MdDeleteOutline />Remove</button>
 
                     </div>
                 </div>

@@ -9,6 +9,8 @@ import groovyWalkAnimation from "../Components/groovyWalk.json";
 import { Blog } from './Blog'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
+import { FaArrowDownLong } from "react-icons/fa6";
+
 
 
 
@@ -18,6 +20,8 @@ export const AllBlogs = () => {
   const axiosSecure = useAxiosSecure()
 
   const [filter, setFilter] = useState(null)
+  const [input, setValue] =useState("")
+  // console.log(input)
 
   // console.log(filter)
 
@@ -28,7 +32,7 @@ export const AllBlogs = () => {
     refetchOnMount: true,
   })
 
-    const blogsData = async () => {
+  const blogsData = async () => {
     const { data } = await axiosSecure('/blogs')
     return data
   }
@@ -46,6 +50,7 @@ export const AllBlogs = () => {
 
   const handleFrontSel = (e) => {
     const value = e.target.value
+    
 
     if (value === 'All') {
       toast('You are watching all blogs.')
@@ -85,7 +90,7 @@ export const AllBlogs = () => {
   const handleTextSearch = async (e) => {
     const value = e.target.value
     // console.log(value)
-
+    setValue(value)
 
     if (value === "") {
       return setFilter(null)
@@ -107,7 +112,7 @@ export const AllBlogs = () => {
         className=" bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover 
         max-h-[calc(100vh-1px)] bg-center bg-no-repeat rounded-2xl my-2"
       >
-        <div className='lg:p-16 text-fourth w-full'>
+        <div className='lg:p-16 text-white w-full'>
           <div className=' bg-[#3d3d3d8e] p-5 lg:py-12 rounded-xl w-full'>
             <h1 className="text-3xl font-extrabold sm:text-5xl flex gap-4">
               Let us find your <strong className="font-extrabold text-rose-700 flex"> Desired Blogs </strong>
@@ -138,7 +143,8 @@ export const AllBlogs = () => {
                 <div className='flex gap-4 w-full'>
                   <input onKeyUp={handleTextSearch} type="text" placeholder='Search By Title' className='p-3 px-5 text-base rounded-xl w-full text-black animate__animated animate__flipInX animate__slow 1s' />
                   <a href={'#blogs'}>
-                    <button className='btn bg-accent hover:bg-primary text-white hover:text-black duration-1000 animate__animated animate__flipInX animate__slow 1s'>Search</button></a>
+                    <button className='btn bg-accent hover:bg-primary text-white hover:text-black duration-1000 animate__animated animate__flipInX animate__slow 1s'>
+                      {`${input ? "Search" : "Travel ↓"}`}</button></a>
 
                 </div>
               </div>
@@ -149,11 +155,11 @@ export const AllBlogs = () => {
       </section>
 
       <div data-aos="zoom-in-down" data-aos-duration='1000' className='text-center w-8/12 mx-auto space-y-2 my-10'>
-        <h1 className='text-center text-4xl'>Discover Our Praiseworthy Blogs</h1>
+        <h1 id='blogs' className='text-center text-4xl'>Discover Our Praiseworthy Blogs</h1>
         <p className='text-lg '>Explore our collection of praiseworthy blogs, where each piece is meticulously crafted to be insightful, engaging, and thought-provoking.</p>
       </div>
 
-      <div id='blogs' className='grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-5 p-0 mb-10 lg:w-full w-10/12 mx-auto mt-5 '>
+      <div className='grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-5 p-0 mb-10 lg:w-full w-10/12 mx-auto mt-5 '>
         {/*
   Heads up! 👋
 

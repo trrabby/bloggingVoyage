@@ -9,7 +9,7 @@ export const Register = () => {
     const { registerWithEmail, setErr, err } = useContext(ContextApi)
     const [toggle, setToggle] = useState(false);
 
-    const navigate = useNavigate()    
+    const navigate = useNavigate()
     const handleForm = (e) => {
         e.preventDefault();
         const form = e.target
@@ -19,23 +19,23 @@ export const Register = () => {
         const PhotoURL = form.PhotoURL.value;
         // console.log(email, PhotoURL, name, password)
 
-        if (!/(?=.*[A-Z])/.test(password)) {
-            setErr('Must have an Uppercase letter in the password')
-            return
-        }
-
-        else if (!/(?=.*[a-z])/.test(password)) {
-            setErr('Must have a Lowercase letter in the password')
-            return
-        }
-
-        else if (!/.{6,}/.test(password)) {
+        if (!/.{6,}/.test(password)) {
             setErr('Length must be at least 6 characters')
             return
         }
 
+        else if (!/(?=.*[A-Z])/.test(password)) {
+            setErr('Must have an Uppercase letter in the password')
+            return
+        }
+
         else if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password)) {
-            setErr('Must have atleast a special character in the password')
+            setErr("Must have atleast a special character ('!@#$%^&*()_+\-=\[\]{};'\\|,.<>\/?]+') in the password")
+            return
+        }
+
+        else if (!/\d+/.test(password)) {
+            setErr('Must have atleast a numeric character in the password')
             return
         }
 

@@ -26,7 +26,7 @@ export const AllBlogs = () => {
   // console.log(filter)
 
 
-  const { data: blogs = [], isLoading, isError, error, refetch, } = useQuery({
+  const { data: blogs = [], isLoading, isError, error } = useQuery({
     queryKey: ['allBlogs'],
     queryFn: () => blogsData(),
   })
@@ -34,6 +34,10 @@ export const AllBlogs = () => {
   const blogsData = async () => {
     const { data } = await axiosSecure('/blogs')
     return data
+  }
+
+  if(isError){
+    console.log(error)
   }
 
   if (isLoading) {

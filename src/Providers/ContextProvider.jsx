@@ -5,6 +5,7 @@ import { app } from '../firebase.config';
 import axios from 'axios';
 import { useAxiosSecure } from '../Hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
+import { useQuery } from '@tanstack/react-query';
 
 export const ContextApi = createContext(null);
 
@@ -46,6 +47,7 @@ export const ContextProvider = ({ children }) => {
 
     }
 
+   
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)

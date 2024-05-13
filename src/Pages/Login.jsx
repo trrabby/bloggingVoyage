@@ -71,10 +71,10 @@ export const Login = () => {
 
     return (
         <div className='flex flex-col lg:flex-row items-center justify-center text-center'>
-            <div className="w-6/12 lg:min-h-[calc(100vh-270px)] bg-no-repeat bg-center bg-contain  bg-[url('https://i.ibb.co/ZT40d6W/3d-render-secure-login-password-illustration-107791-16640.jpg')] rounded-lg mb-5 mt-5   ">
+            <div className="w-6/12 lg:min-h-[calc(100vh-270px)] bg-no-repeat bg-center bg-contain  bg-[url('https://i.ibb.co/ZT40d6W/3d-render-secure-login-password-illustration-107791-16640.jpg')] rounded-lg lg:mb-5 mt-5   ">
 
             </div>
-            <div className="w-6/12 rounded-lg mb-5 mt-5 flex flex-col items-center justify-center text-center  ">
+            <div className="lg:w-6/12 rounded-lg mb-5 lg:mt-5 flex flex-col items-center justify-center text-center  ">
                 <div className="w-full rounded-lg mb-5 mt-5 flex flex-col items-center justify-center text-center  ">
                     <Helmet>
                         <title>Fiber Fution | Log in</title>

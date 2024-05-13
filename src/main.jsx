@@ -17,13 +17,13 @@ import { Login } from './Pages/Login';
 import { Register } from './Pages/Register';
 import { PrivateRoute } from './Providers/PraivateRoute';
 import { AllBlogs } from './Pages/AllBlogs';
-import { FeaturedBlogs } from './Pages/FeaturedBlogs';
 import { WishList } from './Pages/WishList';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { BlogDetails } from './Pages/BlogDetails';
 import { useAxiosSecure } from './Hooks/useAxiosSecure';
 import { Update } from './Pages/Update';
 import { WishCardDetails } from './Pages/WishCardDetails';
+import { FeaturedBlogs } from './Pages/FeaturedBlogs';
 
 const axiosSecure = useAxiosSecure()
 

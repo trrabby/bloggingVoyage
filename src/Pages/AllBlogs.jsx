@@ -113,7 +113,7 @@ export const AllBlogs = () => {
     <div >
       <section
         className=" bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover 
-        max-h-[calc(100vh-1px)] bg-center bg-no-repeat rounded-2xl my-2"
+        lg:max-h-[calc(100vh-1px)] bg-center bg-no-repeat rounded-2xl my-2"
       >
         <div className='lg:p-20 text-white w-full'>
           <div className=' bg-[#3d3d3d8e] p-5 lg:py-12 rounded-xl w-full'>
@@ -158,10 +158,10 @@ export const AllBlogs = () => {
       </section>
      
 
-      <div className=' bg-[url(https://i.ibb.co/cJpk7rp/night-owl-perched-spooky-tree-branch-generative-ai-188544-8360.jpg)]  bg-cover bg-center bg-no-repeat p-5 bg-fixed text-fourth pt-10 mt-10'>
-        <div data-aos="zoom-in-down" data-aos-duration='1000' className='text-center w-8/12 mx-auto space-y-2 my-10  text-white'>
-          <h1 id='blogs' className='text-center text-4xl font-extrabold '>Discover Our Praiseworthy Blogs</h1>
-          <p className='text-lg font-bold '>Explore our collection of praiseworthy blogs, where each piece is meticulously crafted to be insightful, engaging, and thought-provoking.</p>
+      <div className=' bg-[url(https://i.ibb.co/cJpk7rp/night-owl-perched-spooky-tree-branch-generative-ai-188544-8360.jpg)]  bg-cover bg-center bg-no-repeat p-5 bg-fixed text-fourth pt-10 lg:mt-10'>
+        <div data-aos="zoom-in-down" data-aos-duration='1000' className='text-center lg:w-8/12 mx-auto space-y-5 my-10  text-white'>
+          <h1 id='blogs' className='text-center lg:text-4xl md:text-2xl text-2xl font-extrabold '>Discover Our Praiseworthy Blogs</h1>
+          <p className='text-lg font-bold lg:text-center text-justify w-full '>Explore our collection of praiseworthy blogs, where each piece is meticulously crafted to be insightful, engaging, and thought-provoking.</p>
         </div>
 
         <div className='grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-5 p-0 mb-10 lg:w-full w-10/12 mx-auto mt-5  '>

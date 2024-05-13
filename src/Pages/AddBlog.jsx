@@ -16,10 +16,10 @@ export const AddBlog = () => {
     const { register, handleSubmit, reset, formState: { errors }, } = useForm()
 
     const onSubmit = async (formInfo) => {
-        // console.log(formInfo)
+        const infoWithAddl ={...formInfo, "blog_owner_pic" : user.photoURL}
 
         try {
-            const { data } = await axiosSecure.post('/blogs', formInfo)
+            const { data } = await axiosSecure.post('/blogs', infoWithAddl)
             if (data.insertedId) {
                 toast.success('Blog Added successfully')
                 navigate('/allBlogs');

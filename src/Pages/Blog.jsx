@@ -67,14 +67,14 @@ export const Blog = ({ item }) => {
 
                 </div>
 
-                <div className='flex justify-around w-full py-2'>
+                <div className='flex lg:justify-around w-full flex-col lg:flex-row py-2 gap-4 justify-center items-center'>
                     <Link to={`/blogs/${_id}`}>
-                    <button onClick={()=>!user && toast.error('login requried to proceed')} className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300   bg-primary hover:border-primary'><TbListDetails />View Details</button>
+                    <button onClick={()=>!user && toast.error('login requried to proceed')} className='btn btn-outline text-black hover:bg-accent font-bold hover:scale-105 hover:duration-300   bg-primary hover:border-primary flex gap-2'><TbListDetails />View Details</button>
                     </Link>
 
                     
                     
-                    <button onClick={wishList} className='btn btn-outline text-white hover:bg-accent font-bold hover:scale-105 hover:duration-300  border-primary hover:border-primary'><MdFormatListBulletedAdd />Add to Wishlist</button>
+                    <button onClick={wishList} className='btn btn-outline text-white hover:bg-accent font-bold hover:scale-105 hover:duration-300  border-primary hover:border-primary w-8/12'><MdFormatListBulletedAdd />Add to Wishlist</button>
 
                     {/* <button onClick={() => handleDelete(_id)} className='btn btn-outline text-red-600 hover:bg-red-500 font-bold hover:scale-105 hover:duration-300 border-none'><MdDeleteOutline />Delete</button> */}
 

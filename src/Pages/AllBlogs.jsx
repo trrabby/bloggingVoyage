@@ -123,7 +123,7 @@ export const AllBlogs = () => {
 
             </h1>
 
-            <p className="mt-4 max-w-lg sm:text-xl">
+            <p className="mt-4 max-w-lg text-xl">
               Our Blogs are mindblowing....
             </p>
 
@@ -132,7 +132,7 @@ export const AllBlogs = () => {
               >
                 <div className="input input-bordered flex items-center gap-2 animate__animated animate__flipInX animate__slow 1s w-full ">
                   <svg xmlns="http://www.w3.org/2000/svg" className='w-5 h-5 ' id="select"><path fill="none" d="M0 0h48v48H0z"></path><path d="M6 10h4V6c-2.21 0-4 1.79-4 4zm0 16h4v-4H6v4zm8 16h4v-4h-4v4zM6 18h4v-4H6v4zM26 6h-4v4h4V6zm12 0v4h4c0-2.21-1.79-4-4-4zM10 42v-4H6c0 2.21 1.79 4 4 4zm-4-8h4v-4H6v4zM18 6h-4v4h4V6zm4 36h4v-4h-4v4zm16-16h4v-4h-4v4zm0 16c2.21 0 4-1.79 4-4h-4v4zm0-24h4v-4h-4v4zm0 16h4v-4h-4v4zm-8 8h4v-4h-4v4zm0-32h4V6h-4v4zM14 34h20V14H14v20zm4-16h12v12H18V18z"></path></svg>
-                  <select name="selectionTab" onChange={handleFrontSel} className='w-full h-full border-none bg-none outline-none  ' placeholder="Select">
+                  <select name="selectionTab" onChange={handleFrontSel} className='w-full h-full border-none bg-none outline-none text-sm lg:text-base  ' placeholder="Select">
                     <option value="" disabled selected>Select a Blog Category</option>
                     <option value="All">All</option>
                     <option value="Health">Health</option>

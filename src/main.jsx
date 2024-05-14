@@ -75,7 +75,7 @@ const router = createBrowserRouter([
       {
         path: "/wblogs/:id",
         element: <PrivateRoute><WishCardDetails></WishCardDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:8000/wishlists/${params.id}`)
+        loader: ({ params }) => fetch(`https://server-side-a-11.vercel.app/wishlists/${params.id}`)
       },
 
     ]

@@ -32,14 +32,14 @@ export const Home = () => {
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
-                className="block w-full rounded bg-third px-12 py-3 text-sm text-white font-bold hover:text-accent duration-700 shadow hover:bg-primary focus:outline-none focus:ring  sm:w-auto"
+                className="block lg:w-4/12 rounded bg-third px-12 py-3 text-sm text-white font-bold hover:text-accent duration-700 shadow hover:bg-primary focus:outline-none focus:ring  sm:w-auto"
                 to={'/allBlogs'}
               >
                 See Blogs
               </Link>
 
               <a
-                className="block w-full rounded px-12 py-3 text-sm font-bold border-accent border-2 text-accent shadow hover:text-primary focus:outline-none focus:ring hover:bg-accent duration-500 sm:w-auto"
+                className="block lg:w-4/12 rounded px-10 py-3 text-sm font-bold border-accent border-2 text-accent shadow hover:text-primary focus:outline-none focus:ring hover:bg-accent duration-500 sm:w-auto"
                 href="#footer"
               >
                 Learn More
@@ -55,31 +55,27 @@ export const Home = () => {
 
       {/* carousel */}
       <section>
-        <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
-            <div className="relative z-10 lg:py-16">
-              <div data-aos="fade-right" data-aos-duration="1000" className="relative h-64 sm:h-80 lg:h-full">
+        <div className="mx-auto max-w-screen-2xl  px-4 lg:py-16 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:h-screen lg:grid-cols-2">
+            <div className="lg:w-6/12 z-10 lg:py-16">
+              <div data-aos="fade-right" data-aos-duration="1000" className="object-center">
                 {/* Slider */}
                 <Slider></Slider>
               </div>
             </div>
 
-            <div className="items-center bg-gray-100">
-              <span
-                className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"
-              ></span>
-
+            <div className="lg:w-6/12 items-center text-center bg-gray-100">
               <div className="p-8 sm:p-16 lg:p-24 space-y-6">
 
-                <h2 className="text-2xl font-bold sm:text-3xl">
+                <h2 data-aos="fade-up" data-aos-duration="1000" className="text-2xl font-bold sm:text-3xl">
                   "Discover the World: Your Ultimate Travel Companion"
                 </h2>
 
-                <p className="my-4 text-gray-600 text-justify">
+                <p data-aos="fade-up" data-aos-duration="2000" className="my-4 text-gray-600 text-justify">
                   "Embark on a journey of discovery with our travel blog, where each post is a passport to new adventures and unforgettable experiences. From hidden gems and off-the-beaten-path destinations to iconic landmarks and cultural insights, we're your trusted guide to exploring the world. Join us as we wanderlust together, sharing captivating stories, practical tips, and breathtaking photos that inspire wanderlust and ignite the spirit of exploration. Whether you're a seasoned traveler or an armchair adventurer, our travel blog invites you to escape the ordinary and embrace the extraordinary as we traverse the globe together, one destination at a time."
                 </p>
 
-                <button>
+                <button data-aos="fade-up" data-aos-duration="1000">
                   <a href="#subscribe"
                     className="w-6/12 rounded px-12 py-3 text-sm font-bold border-accent border-2 text-accent shadow hover:text-primary  hover:bg-accent duration-500 
                   sm:w-auto"
@@ -95,12 +91,12 @@ export const Home = () => {
       </section>
 
       {/* Newsletters */}
-      <section id='subscribe' className="relative flex flex-wrap justify-end lg:items-center mt-36 gap-10">
+      <section id='subscribe' className="container relative flex flex-wrap lg:flex-row flex-col-reverse justify-end lg:items-center lg:mt-20 my-10 lg:my-0 gap-10">
         <div className="text-center sm:text-left md:col-span-4 lg:col-span-2">
           <p className="text-2xl font-extrabold text-gray-900">Stay in Touch</p>
 
           <div className="mx-auto mt-8 max-w-md sm:ms-0">
-            <p className="text-left leading-relaxed text-gray-500 ltr:sm:text-left rtl:sm:text-right">
+            <p className="lg:text-left  leading-relaxed text-gray-500 ltr:sm:text-left rtl:sm:text-right">
               "Connect with us today! Reach out for inquiries, collaborations, or just to say hello. We're here to listen and assist."</p>
 
             <form onSubmit={handleSubscribe} className="mt-4">
@@ -108,7 +104,7 @@ export const Home = () => {
                 <label htmlFor="email" className="sr-only">Email</label>
 
                    <input
-                    className="w-full rounded-full border-gray-200 px-6 py-3 shadow-sm shadow-accent"
+                    className="w-full rounded-sm border-gray-200 px-6 py-3 shadow-sm shadow-accent"
                     type="email"
                     placeholder="Enter your email"
                     name='subscribe'
@@ -116,7 +112,7 @@ export const Home = () => {
                   />
 
                   <button
-                    className="block w-full rounded px-5 py-2 text-base font-bold shadow-accent shadow-lg hover:shadow-primary border duration-500 sm:w-auto "
+                    className="block w-4/12 mx-auto lg:m-0 rounded-sm px-5 py-2 text-base font-bold shadow-accent shadow-lg hover:shadow-primary border duration-500 sm:w-auto "
                     type="submit"
                   >
                     Subscribe

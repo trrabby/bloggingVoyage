@@ -33,28 +33,28 @@ export const BannerHead = () => {
                 <div>
                     <div className="flex justify-center items-center gap-3 p-3 lg:w-full">
                         <a target='_blank' href="https://www.facebook.com/profile.trrabby">
-                            <p className="lg:p-2 p-1 rounded-full border-2 border-gray-400 hover:bg-primary">
-                                <FaFacebookF className="text-2xl text-white" />
+                            <p className="lg:p-2 p-1 rounded-full  text-white  hover:text-accent border-2 border-gray-400 duration-500 hover:bg-primary">
+                                <FaFacebookF className="text-2xl" />
                             </p>
                         </a>
                         <a target='_blank' href="https://www.linkedin.com/in/towfiqueweb">
-                            <p className="lg:p-2 p-1 rounded-full border-2 border-gray-400 hover:bg-primary">
-                                <FaLinkedinIn className="text-2xl text-white" />
+                            <p className="lg:p-2 p-1 rounded-full border-2  text-white  hover:text-accent border-gray-400 duration-500 hover:bg-primary">
+                                <FaLinkedinIn className="text-2xl" />
                             </p>
                         </a>
                         <a>
-                            <p className="lg:p-2 p-1 md:flex hidden rounded-full border-2 border-gray-400 hover:bg-primary">
-                                <FaInstagram className="text-2xl text-white" />
+                            <p className="lg:p-2 p-1 md:flex hidden rounded-full border-2 duration-500 border-gray-400 hover:bg-primary  text-white  hover:text-accent">
+                                <FaInstagram className="text-2xl" />
                             </p>
                         </a>
                         <a  target='_blank' href="https://mail.google.com/mail/u/0/#inbox?compose=new">
-                            <p className="lg:p-2 p-1 flex md:hidden rounded-full border-2 border-gray-400 hover:bg-primary">
-                                <MdAttachEmail  className="text-2xl text-white" />
+                            <p className="lg:p-2 p-1 flex md:hidden rounded-full border-2 duration-500 border-gray-400 hover:bg-primary  text-white  hover:text-accent">
+                                <MdAttachEmail  className="text-2xl" />
                             </p>
                         </a>
                         <a >
-                            <p className="lg:p-2 p-1 flex md:hidden rounded-full border-2 border-gray-400 hover:bg-primary">
-                                <FaMobileAlt className="text-2xl text-white" />
+                            <p className="lg:p-2 p-1 flex md:hidden rounded-full border-2 duration-500 border-gray-400 hover:bg-primary  text-white  hover:text-accent">
+                                <FaMobileAlt className="text-2xl" />
                             </p>
                         </a>
 

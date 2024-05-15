@@ -17,7 +17,7 @@ export const ContextProvider = ({ children }) => {
     const [user, setUser] = useState(null);
 
 
-
+    const axiosSecure = useAxiosSecure()
     const auth = getAuth(app);
 
     const registerWithEmail = (email, password, name, PhotoURL) => {
@@ -47,12 +47,29 @@ export const ContextProvider = ({ children }) => {
 
     }
 
-   
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
             console.log('CurrentUser-->', currentUser)
             setLoading(false)
+            // if user exist then provide a token
+            if (currentUser) {
+                const loggedPerson = { email: currentUser.email }
+                try{
+                    axiosSecure.post("/jwt", loggedPerson)
+                    .then(res=>console.log('token response', res.data))
+                }
+                // try {
+                //     axios.post('http://localhost:8000/jwt', loggedPerson, {
+                //         withCredentials: true
+                //     })
+                //     .then(res=>console.log('token response', res)) 
+                // }
+                catch (err) {
+                    console.log(err)
+                }
+            }
         })
         return () => {
             return unsubscribe()
@@ -67,12 +84,13 @@ export const ContextProvider = ({ children }) => {
     // }
 
 
-    const signOutfromLogin = () => {
+    const signOutfromLogin = async () => {
         toast.success('Signed Out Successfully')
+        const {data} = await axiosSecure.post('/logout')
+        console.log('cookie logout',data)
         return signOut(auth)
     }
 
-    const axiosSecure = useAxiosSecure()
 
     const handleDelete = async (id) => {
         const shouldDelete = await Swal.fire({
@@ -109,7 +127,7 @@ export const ContextProvider = ({ children }) => {
         //     .then(data => {
         //         console.log(data)
         //         if (data.deletedCount > 0) {
-                    
+
         //             // const remaining = products.filter(item => item._id !== id);
         //             // setProducts(remaining);
 

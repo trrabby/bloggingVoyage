@@ -1,8 +1,12 @@
 import React from 'react'
 import { TbCategory } from 'react-icons/tb';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useParams } from 'react-router-dom';
 
 export const WishCardDetails = () => {
+
+    // const {id} = useParams()
+    // console.log(id)
+    
     const item = useLoaderData()
     // console.log(item)
     const { _id, category, img_url, long_description, short_description, title } = item;

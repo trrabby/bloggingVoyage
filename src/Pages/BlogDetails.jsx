@@ -124,26 +124,30 @@ export const BlogDetails = () => {
                 </div>
 
             </div>
-            <div className='space-y-2 bg-[url(https://i.ibb.co/5vmw7j4/reminder-popup-bell-notification-alert-alarm-icon-sign-symbol-application-website-ui-purple-backgrou.jpg)] bg-no-repeat bg-center bg-cover p-5 bg-fixed'>
-                <h1 className='text-center lg:text-2xl text-xl font-bold pt-5'>Comment Section</h1>
-                <p className='text-lg text-center'>Leave your valuable comments here.</p>
+            <div data-aos="fade-up" data-aos-duration="1000" className='p-5 my-10 lg:w-4/12 md:w-6/12 mx-auto rounded-xl'>
+                    <h1 className='text-center lg:text-3xl text-xl font-bold'>Comment Section</h1>
+                    <p className='text-lg text-center'>Leave your valuable comments here.</p>
+            </div>
 
+            <div className='space-y-2 bg-[url(https://i.ibb.co/VWyw7Bc/premium-photo-1683262038148-2ac280407276.jpg)] bg-no-repeat bg-center bg-cover p-5 bg-fixed text-white rounded-t-lg'>
+                
                 <div className='flex flex-col-reverse md:flex-row justify-between pt-10 gap-3'>
-                    <div className='lg:w-6/12 border-r-2 border-accent '>
-                        <Card className="mx-auto max-w-lg sticky top-16 ">
+                    <div className='lg:w-6/12 w-full border-r-2 border-fourth '>
+                        <Card data-aos="fade-up" data-aos-duration="1000" className="mx-auto max-w-lg sticky top-16 ">
                             <form onSubmit={handleComment}
 
                             >
                                 <div className="flex flex-col gap-2">
                                     <label htmlFor="description" className="text-tremor-default text-tremor-content dark:text-dark-tremor-content border-none">
                                         <div className='flex justify-between'>
-                                            <h1 className='text-black font-bold flex'>User: {user.displayName || user.email} </h1> <img className='h-8 w-8 rounded-full' src={user.photoURL} alt="" />
+                                            <h1 className='text-fourth font-bold flex'>User: {user.displayName || user.email} </h1> <img className='h-8 w-8 rounded-full' src={user.photoURL} alt="" />
 
                                         </div>
                                         Comment here...
 
                                     </label>
                                     <Textarea
+                                        className='text-black'
                                         id="description"
                                         placeholder="Start typing here..."
                                         rows={6}
@@ -160,9 +164,9 @@ export const BlogDetails = () => {
 
                     </div>
 
-                    <div className='flex flex-col gap-3 w-full'>
+                    <div data-aos="fade-up" data-aos-duration="1000" className='flex flex-col gap-3 lg:w-8/12 w-full'>
                         {
-                            comments?.map(comment => <CommentCard key={comment._id} comment={comment}></CommentCard> )
+                            comments?.map(comment => <CommentCard key={comment._id} comment={comment}></CommentCard>)
                         }
                     </div>
 

@@ -7,7 +7,7 @@ import { useState } from "react";
 export const FeaturedBlogs = () => {
   const axiosSecure = useAxiosSecure()
 
-  const { data, isLoading, isError, error, refetch, } = useQuery({
+  const { data:Featured=[], isLoading, isError, error, refetch, } = useQuery({
     queryKey: ['reactTable'],
     queryFn: () =>blogsData(),
     
@@ -18,13 +18,13 @@ export const FeaturedBlogs = () => {
     return data
   }
 
-  console.log(data)
+  // console.log(data)
  
-    // tableData.sort((a, b) =>{
-  //   const fRating = a.rating;
-  //   const sRating = b.rating;
-  //   return fRating > sRating ? -1 : 1
-  // })
+  Featured.sort((a, b) =>{
+    const fRating = a.long_description.length;
+    const sRating = b.long_description.length;
+    return fRating > sRating ? -1 : 1
+  })
   
   return (
     <div>
@@ -46,8 +46,8 @@ export const FeaturedBlogs = () => {
               </tr>
             </thead>
             <tbody >
-              {data &&
-                data.slice(0,10).map((item, i) => <tr key={item._id} data-aos="fade-down" data-aos-duration="800" className='hover:bg-[#dab9b93b] border-b'>
+              {Featured &&
+                Featured.slice(0,10).map((item, i) => <tr key={item._id} data-aos="fade-down" data-aos-duration="800" className='hover:bg-[#dab9b93b] border-b'>
                   <th>{i + 1}</th>
                   <td>{item.title}</td>
                   <td>{item.user_name || item.email}</td>

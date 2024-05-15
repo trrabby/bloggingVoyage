@@ -104,7 +104,7 @@ export const Footer = () => {
                 <div className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
 
                     <div className="lg:flex lg:items-center lg:justify-between text-fourth">
-                        <div>
+                        <div data-aos="fade-right" data-aos-duration="1000">
                             <div className="flex justify-center text-primary lg:justify-start ">
                                 <Link to={'/'} >
                                     <span className="btn btn-ghost text-sm md:text-xl lg:text-2xl text-primary font-extrabold md:flex md:flex-col"><TbBrandBlogger /> Blogging Voyage</span>
@@ -117,7 +117,7 @@ export const Footer = () => {
                             </p>
                         </div>
 
-                        <ul className="mt-8 flex gap-6">
+                        <ul data-aos="fade-left" data-aos-duration="1000" className="mt-8 flex gap-6">
                             <li>
                                 <a
                                     href="#"
@@ -215,7 +215,7 @@ export const Footer = () => {
 
                     </div>
 
-                    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4 mt-10">
+                    <div data-aos="fade-up" data-aos-duration="1000" className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4 mt-10">
                         <div>
                             <p className="font-medium text-primary">Services</p>
 
@@ -304,8 +304,8 @@ export const Footer = () => {
                     </div>
 
 
-                    <div className="flex items-center justify-center">
-                        <p className="lg:w-4/12 mx-auto text-center text-sm border-x-2 border-accent p-5 text-primary font-bold">
+                    <div className="flex items-end justify-center">
+                        <p data-aos="fade-down" data-aos-duration="1000" className="lg:w-4/12 mx-auto text-center text-sm border-x-2 border-accent p-5 text-primary font-bold">
                             Copyright &copy; 2024. All rights reserved.
                         </p>
                         <div className="md:mt-0 md:block md:right-11 md:bottom-16 absolute right-5 bottom-1/4">

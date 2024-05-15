@@ -6,7 +6,7 @@ export const WishCardDetails = () => {
 
     // const {id} = useParams()
     // console.log(id)
-    
+
     const item = useLoaderData()
     // console.log(item)
     const { _id, category, img_url, long_description, short_description, title } = item;
@@ -19,12 +19,12 @@ export const WishCardDetails = () => {
                 <title>Blogging Voyage | Blog Details{_id}</title>
             </Helmet> */}
             <div className="flex lg:flex-row flex-col  card card-compact lg:w-full w-10/12 mx-auto bg-base-100 shadow-xl rounded-2xl cursor-text  h-full border border-blue-200 mb-5">
-                <div className='lg:w-8/12'>
+                <div data-aos="fade-up" data-aos-duration="1000" className='lg:w-8/12'>
                     <figure><img className='md:max-h-[calc(100vh-1px)] max-h-[calc(100vh-150px)]  
                     w-full rounded-2xl p-5' src={img_url} alt="" /></figure>
                 </div>
 
-                <div className="card-body lg:w-4/12 p-2 flex flex-col space-y-5">
+                <div data-aos="fade-left" data-aos-duration="1000" className="card-body lg:w-4/12 p-2 flex flex-col space-y-5">
                     <div className='space-y-3'>
                         <h2 className="card-title text-lg md:text-xl text-justify font-semibold lg:text-2xl lg:semi-extrabold">
                             {title}

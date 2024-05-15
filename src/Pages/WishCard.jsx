@@ -45,7 +45,7 @@ export const WishCard = ({data, refetch}) => {
    
     // console.log(data)
     return (
-        <div>
+        <div data-aos="fade-down" data-aos-duration="1000">
             <article className="flex flex-col md:flex-row bg-white transition hover:shadow-xl cursor-text">
                 <div className="basis-56">
                     <img

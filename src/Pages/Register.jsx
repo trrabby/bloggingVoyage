@@ -6,11 +6,11 @@ import toast from 'react-hot-toast';
 import { ContextApi } from '../Providers/ContextProvider';
 
 export const Register = () => {
-    const { registerWithEmail, setErr, err } = useContext(ContextApi)
-    const [toggle, setToggle] = useState(false);
+    const { registerWithEmail, setErr, err, user, setUser, updateUserInfo } = useContext(ContextApi)
+    const [toggle, setToggle,] = useState(false);
 
     const navigate = useNavigate()
-    const handleForm = (e) => {
+    const handleForm = async (e) => {
         e.preventDefault();
         const form = e.target
         const email = form.email.value;
@@ -39,25 +39,24 @@ export const Register = () => {
             return
         }
 
-
-        registerWithEmail(email, password, name, PhotoURL)
-            .then((userCredential) => {
-                const user = userCredential.user;
+            try{
+                const result = await registerWithEmail(email, password)
+                // console.log(result)
+                await updateUserInfo(name, PhotoURL)
+                setUser({...user, photoURL:PhotoURL, displayName:name})
                 toast.success('Registration & Login Successfull')
                 form.reset();
                 navigate(location?.state ? location.state : "/");
-
-            })
-            .catch((error) => {
+            }
+            
+            catch(error){
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage)
                 setErr(errorMessage);
                 toast.error('Registration Unsuccessfull')
-            });
-
-
-    }
+            };
+        }
     return (
         <div className="lg:w-full w-10/12 mx-auto mt-5 bg-cover bg-center rounded-lg flex flex-col items-start justify-center text-center md:p-10 lg:p-0 border-2  ">
             <Helmet>
@@ -102,7 +101,7 @@ export const Register = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
                         <input className='text-black w-full' type="text" name='PhotoURL' placeholder="PhotoURL" />
                     </label>
-                    <Link to={'/login'} className='text-sm text-primary font-extrabold text-left flex gap-2 w-auto '>Have an account? <span className='hover:text-accent text-black'>Log in</span></Link>
+                    <Link to={'/login'} onClick={() => setErr(null)} className='text-sm text-primary font-extrabold text-left flex gap-2 w-auto '>Have an account? <span className='hover:text-accent text-black'>Log in</span></Link>
                     <button className='btn btn-outline text-white bg-accent hover:bg-primary hover:text-black' type='submit'>Register</button>
                 </form>
 

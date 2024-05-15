@@ -74,7 +74,8 @@ export const Blog = ({ item }) => {
 
                     
                     
-                    <button onClick={wishList} className='btn btn-outline text-white hover:bg-accent font-bold hover:scale-105 hover:duration-300  border-primary hover:border-primary w-8/12'><MdFormatListBulletedAdd />Add to Wishlist</button>
+                    <button onClick={wishList} className='btn btn-outline text-white hover:bg-accent font-bold hover:scale-105 hover:duration-300  border-primary hover:border-primary 
+                    lg:w-6/12 w-8/12'><MdFormatListBulletedAdd />Add to Wishlist</button>
 
                     {/* <button onClick={() => handleDelete(_id)} className='btn btn-outline text-red-600 hover:bg-red-500 font-bold hover:scale-105 hover:duration-300 border-none'><MdDeleteOutline />Delete</button> */}
 

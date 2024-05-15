@@ -38,79 +38,42 @@ export const Slider = () => {
         className="mySwiper rounded-xl"
       >
         <SwiperSlide>
-          <div className="flex flex-col h-full items-end text-left space-y-2 justify-center bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://i.ibb.co/vhSZ2yK/karly-santiago-E7zsz8-JA8-FM-unsplash.jpg')] w-full bg-cover bg-center  lg:pt-5 lg:pb-5 p-5 rounded-lg">
+          <div className="flex flex-col h-full items-end text-left space-y-2 justify-end bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://i.ibb.co/4tHS9vt/photo-1442570468985-f63ed5de9086.jpg')] w-full bg-cover bg-center  lg:pt-5 lg:pb-5 p-5 rounded-lg">
 
             <div className='flex flex-col h-auto lg:w-8/12 w-full items-cenert justify-center p-5 pl-10 rounded-lg bg-[#071f1f73] space-y-1'>
-              <p className='lg:text-3xl md:text-xl text-base text-orange-200 font-extrabold'>Embroidery Thread Ball</p>
-              <p className=' lg:text-lg md:text-base text-sm md:flex hidden'>Elevate your embroidery with our vibrant Embroidery Thread Balls. Smooth, durable, and rich in color, perfect for all your stitching projects.</p>
-              <p className='lg:text-lg md:text-base text-sm'>
-                Price: 10 bdt per unit
-              </p>
-              <p className='lg:text-lg md:text-base text-sm'>Stock: In Stock</p>
+              <p className='lg:text-3xl md:text-xl text-base text-orange-200 font-extrabold'>Darjeeling Himalayan, India</p>
             </div>
-            <Link to={'/allItemsTable'} href="#cards_sec" className='w-8/12 flex justify-start'>
-              <button className='btn btn-outline text-orange-200 bg-[#071f1f73] hover:bg-accent md:ml-10 md:font-bold md:text-base text-sm px-10'>All Items</button>
-            </Link>
-
-
+            
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col h-full items-end text-left space-y-2 justify-center bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://i.ibb.co/vdP8z2Y/wool-knitting-needles-basket-23-2148859122.jpg')] w-full bg-cover lg:pt-5 lg:pb-5 p-5 rounded-lg">
+          <div className="flex flex-col h-full items-end text-left space-y-2 justify-end bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://i.ibb.co/BPmdfCL/photo-1499678329028-101435549a4e.jpg')] w-full bg-cover bg-center  lg:pt-5 lg:pb-5 p-5 rounded-lg">
 
-            <div className='flex flex-col h-auto lg:w-8/12 w-full items-cenert justify-center p-5 rounded-lg bg-[#071f1f73] space-y-1'>
-              <p className='lg:text-3xl md:text-xl text-base text-orange-200 font-extrabold'>Cozy Cable Knit Scarf</p>
-              <p className=' lg:text-lg md:text-base text-sm md:flex hidden'>Wrap yourself in warmth and style with our Cozy Cable Knit Scarf. Crafted with soft, high-quality yarn, it's the perfect accessory for chilly days, providing comfort and fashion in one delightful piece.</p>
-              <p className='lg:text-lg md:text-base text-sm'>
-                Price: 700 bdt
-              </p>
-              <p className='lg:text-lg md:text-base text-sm'>Stock Status: In Stock</p>
+            <div className='flex flex-col h-auto lg:w-8/12 w-full items-cenert justify-center p-5 pl-10 rounded-lg bg-[#071f1f73] space-y-1'>
+              <p className='lg:text-3xl md:text-xl text-base text-orange-200 font-extrabold'>Istambul, Turkey</p>
             </div>
-            <Link to={'/allItemsTable'} href="#cards_sec" className='w-8/12 flex justify-start'>
-              <button className='btn btn-outline text-orange-200 bg-[#071f1f73] hover:bg-accent md:ml-10 md:font-bold md:text-base text-sm px-10'>All Items</button>
-            </Link>
-
-
+            
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col h-full items-start text-left space-y-2 justify-center bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://i.ibb.co/10D3YDx/knitting-needles-wool-basket-with-copy-space-23-2148859150.jpg')] w-full bg-cover lg:pt-5 lg:pb-5 p-5 rounded-lg">
+          <div className="flex flex-col h-full items-end text-left space-y-2 justify-end bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://i.ibb.co/VYysDzV/photo-1548013146-72479768bada.jpg')] w-full bg-cover bg-center  lg:pt-5 lg:pb-5 p-5 rounded-lg">
 
-            <div data-aos="fade-right" data-aos-duration="1000" className='flex flex-col h-auto lg:w-8/12 w-full items-cenert justify-center p-5  pl-10 rounded-lg bg-[#071f1f73] space-y-1'>
-
-              <p  className='lg:text-3xl md:text-xl text-base text-orange-200 font-extrabold'>Embroidery Thread Ball Niddle</p>
-              <p className='lg:text-lg md:text-base text-sm md:flex hidden'>Elevate your embroidery with our vibrant Embroidery Thread Balls. Smooth, durable, and rich in color, perfect for all your stitching projects.</p>
-              <p className='lg:text-lg md:text-base text-sm'>
-                Price: 100 bdt per unit
-              </p>
-              <p className='lg:text-lg mdtext-base text-sm'>Stock: In Stock</p>
+            <div className='flex flex-col h-auto lg:w-8/12 w-full items-cenert justify-center p-5 pl-10 rounded-lg bg-[#071f1f73] space-y-1'>
+              <p className='lg:text-3xl md:text-xl text-base text-orange-200 font-extrabold'>Tajmahal, India</p>
             </div>
-            <Link to={'/allItemsTable'} href="#cards_sec" className='w-8/12 flex justify-start  '>
-              <button className='btn btn-outline text-orange-200 bg-[#071f1f73] hover:bg-accent md:ml-10 md:font-bold md:text-base text-sm px-10'>All Items</button>
-            </Link>
-
-
+            
           </div>
         </SwiperSlide>
-
         <SwiperSlide>
-          <div className="flex flex-col h-full items-end text-left space-y-2 justify-center bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://i.ibb.co/F7Nmf5k/top-view-wool-knitting-needles-23-2148859129.jpg')] w-full bg-cover lg:pt-5 lg:pb-5 p-5 rounded-lg">
+          <div className="flex flex-col h-full items-end text-left space-y-2 justify-end bg-gray-400 dark:bg-gray-700 dark:text-white bg-[url('https://i.ibb.co/K5ZfHkQ/photo-1664834681881-5da1483e73df.jpg')] w-full bg-cover bg-center  lg:pt-5 lg:pb-5 p-5 rounded-lg">
 
-            <div className='flex flex-col h-auto lg:w-8/12 w-full items-cenert justify-center p-5 rounded-lg bg-[#071f1f73] space-y-1'>
-              <p className='lg:text-3xl md:text-xl text-base text-orange-200 font-extrabold'>Embroidery Thread Ball</p>
-              <p className=' lg:text-lg md:text-base text-sm md:flex hidden'>Elevate your embroidery with our vibrant Embroidery Thread Balls. Smooth, durable, and rich in color, perfect for all your stitching projects.</p>
-              <p className='lg:text-lg md:text-base text-sm'>
-                Price: 10 bdt per unit
-              </p>
-              <p className='lg:text-lg md:text-base text-sm'>Stock: In Stock</p>
+            <div className='flex flex-col h-auto lg:w-8/12 w-full items-cenert justify-center p-5 pl-10 rounded-lg bg-[#071f1f73] space-y-1'>
+              <p className='lg:text-3xl md:text-xl text-base text-orange-200 font-extrabold'>Lake Geneva, Switzerland</p>
             </div>
-            <Link to={'/allItemsTable'} href="#cards_sec" className='w-8/12 flex justify-start'>
-              <button className='btn btn-outline text-orange-200 bg-[#071f1f73] hover:bg-accent md:ml-10 md:font-bold md:text-base text-sm px-10'>All Items</button>
-            </Link>
-
-
+            
           </div>
         </SwiperSlide>
+        
 
         <div className="autoplay-progress text-accent" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>

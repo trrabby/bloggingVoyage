@@ -126,7 +126,7 @@ export const Home = () => {
 
         <div className="h-64 w-full sm:h-96 lg:w-6/12">
           <img alt=""
-            src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            src="https://i.ibb.co/NNwHwZ8/premium-photo-1681883457631-e21611e38757.jpg"
             className="inset-0 h-full w-full object-cover rounded-t-xl"
           />
         </div>

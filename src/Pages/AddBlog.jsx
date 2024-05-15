@@ -22,8 +22,8 @@ export const AddBlog = () => {
             const { data } = await axiosSecure.post('/blogs', infoWithAddl)
             if (data.insertedId) {
                 toast.success('Blog Added successfully')
-                navigate('/allBlogs');
-                // reset();
+                // navigate('/allBlogs');
+                reset();
             }
             
         }

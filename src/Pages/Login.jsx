@@ -101,7 +101,7 @@ export const Login = () => {
                         </dir>
 
                     } */}
-                            <Link to={'/register'} className='text-sm text-primary font-extrabold text-left flex gap-2'>Don't have any account? <span className='text-red-200 hover:text-accent'>Register Now</span></Link>
+                            <Link to={'/register'} onClick={()=>setErr(null)} className='text-sm text-primary font-extrabold text-left flex gap-2'>Don't have any account? <span className='text-red-200 hover:text-accent'>Register Now</span></Link>
                             <button className='btn btn-outline hover:bg-accent text-white' type='submit'>Log In</button>
                         </form>
 

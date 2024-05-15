@@ -44,7 +44,6 @@ export const Navbar = () => {
             // setLoading(false)
             return toast.error('log in required to proceed')
         }
-
     }
 
     return (
@@ -137,11 +136,11 @@ export const Navbar = () => {
                                     {/* <p className='hover:tooltip'>{user.email}</p> */}
                                     <div className="dropdown dropdown-hover">
                                         <div tabIndex={0} role="button" >
-                                            <div className=' font-bold h-8 w-8 rounded-full '>
+                                            <div className=' font-bold h-8 w-8 rounded-full'>
                                                 {
                                                     user.photoURL ?
-                                                        <div>
-                                                            <img className='rounded-full h-8 w-8' src={user.photoURL} />
+                                                        <div className='h-full w-full'>
+                                                            <img className='rounded-full object-center' src={user.photoURL} />
                                                         </div> :
                                                         <FaUserCircle className='w-full h-full' />
                                                         
@@ -159,7 +158,7 @@ export const Navbar = () => {
                                 </> :
 
                                 <div className="tooltip tooltip-bottom flex items-center justify-center" data-tip="Settings">
-                                    <button className=" border-none "> <FaUserCircle className='md:w-8 md:h-8' /></button>
+                                    <button className="border-none"> <FaUserCircle className='w-8 h-8' /></button>
                                 </div>
 
 

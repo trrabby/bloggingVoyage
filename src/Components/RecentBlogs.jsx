@@ -21,10 +21,10 @@ export const RecentBlogs = () => {
     const recentBlogs = blogs.slice(-6).reverse()
     // console.log(recentBlogs)
 
-  return (
-    <div className='my-10 '>
+  return ( 
+    <div className='my-10 space-y-24'>
             <div data-aos="fade-up" data-aos-duration="1000" className='text-center space-y-5'>
-                <h1 className='lg:text-3xl md:text-2xl text-xl font-extrabold'>Recently Added Blogs</h1>
+                <h1 className='lg:text-3xl md:text-2xl text-xl font-extrabold'>Top New Blogs</h1>
                 <p className='text-lg lg:w-6/12 mx-auto'>"Stay Updated with Our Latest Adventures: Dive into Our Recent Stories and Discover New Destinations!"</p>
             </div>
 

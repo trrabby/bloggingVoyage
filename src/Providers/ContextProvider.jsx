@@ -1,4 +1,4 @@
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, GithubAuthProvider, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, GithubAuthProvider, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { app } from '../firebase.config';
@@ -20,9 +20,9 @@ export const ContextProvider = ({ children }) => {
     const axiosSecure = useAxiosSecure()
     const auth = getAuth(app);
 
-    const registerWithEmail = (email, password, name, PhotoURL) => {
+    const registerWithEmail = (email, password) => {
         setLoading(true)
-        return createUserWithEmailAndPassword(auth, email, password, name, PhotoURL)
+        return createUserWithEmailAndPassword(auth, email, password)
 
     }
 
@@ -57,15 +57,13 @@ export const ContextProvider = ({ children }) => {
             if (currentUser) {
                 const loggedPerson = { email: currentUser.email }
                 try{
+                    // axios.post('http://localhost:8000/jwt', loggedPerson,{
+                    //     withCredentials: true,
+                    // })
                     axiosSecure.post("/jwt", loggedPerson)
                     .then(res=>console.log('token response', res.data))
                 }
-                // try {
-                //     axios.post('http://localhost:8000/jwt', loggedPerson, {
-                //         withCredentials: true
-                //     })
-                //     .then(res=>console.log('token response', res)) 
-                // }
+                
                 catch (err) {
                     console.log(err)
                 }
@@ -74,14 +72,14 @@ export const ContextProvider = ({ children }) => {
         return () => {
             return unsubscribe()
         }
-    }, [])
+    }, [user])
 
-    // const updateUserInfo = (displayName, photo) => {
-    //     return updateProfile(auth.currentUser, {
-    //         displayName: displayName, photoURL: photo
-    //     })
+    const updateUserInfo = (displayName, photo) => {
+        return updateProfile(auth.currentUser, {
+            displayName: displayName, photoURL: photo
+        })
 
-    // }
+    }
 
 
     const signOutfromLogin = async () => {
@@ -152,7 +150,7 @@ export const ContextProvider = ({ children }) => {
         signOutfromLogin,
         signInWithGoogle,
         singInWithGitHub,
-        // updateUserInfo,
+        updateUserInfo,
         setErr,
         err,
         handleDelete

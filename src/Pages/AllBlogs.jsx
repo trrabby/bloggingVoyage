@@ -112,7 +112,7 @@ export const AllBlogs = () => {
 
     <div >
       <section
-        className=" bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover 
+        className=" bg-[url(https://i.ibb.co/Csvs3Rc/photo-1600565193348-f74bd3c7ccdf.jpg)] bg-cover 
         lg:max-h-[calc(100vh-1px)] bg-center bg-no-repeat rounded-2xl my-2"
       >
         <div className='lg:p-20 text-white w-full'>
@@ -158,8 +158,8 @@ export const AllBlogs = () => {
       </section>
      
 
-      <div className=' bg-[url(https://i.ibb.co/cJpk7rp/night-owl-perched-spooky-tree-branch-generative-ai-188544-8360.jpg)]  bg-cover bg-center bg-no-repeat p-5 bg-fixed text-fourth pt-10 lg:mt-10'>
-        <div data-aos="zoom-in-down" data-aos-duration='1000' className='text-center lg:w-8/12 mx-auto space-y-5 my-10  text-white'>
+      <div className=' bg-[url(https://i.ibb.co/3BBFZwr/photo-1544716278-ca5e3f4abd8c.jpg)]  bg-cover bg-center bg-no-repeat p-5 bg-fixed text-fourth pt-10 lg:mt-10'>
+        <div data-aos="zoom-in-down" data-aos-duration='1000' className='text-center lg:w-8/12 mx-auto space-y-5 my-10  text-accent'>
           <h1 id='blogs' className='text-center lg:text-4xl md:text-2xl text-2xl font-extrabold '>Discover Our Praiseworthy Blogs</h1>
           <p className='text-lg font-bold lg:text-center text-justify w-full '>Explore our collection of praiseworthy blogs, where each piece is meticulously crafted to be insightful, engaging, and thought-provoking.</p>
         </div>

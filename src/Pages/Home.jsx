@@ -4,6 +4,7 @@ import { Slider } from '../Components/Slider'
 import toast from 'react-hot-toast'
 import { RecentBlogs } from '../Components/RecentBlogs'
 import { Helmet } from 'react-helmet-async'
+import { motion } from "framer-motion"
 
 const handleSubscribe = (e) => {
   e.preventDefault();
@@ -169,11 +170,11 @@ export const Home = () => {
       <section id='subscribe' className="container relative flex flex-wrap lg:flex-row flex-col-reverse justify-end lg:items-center lg:mt-20 my-10 lg:my-0 gap-10">
         <div data-aos="fade-right" data-aos-duration="1000" className="text-center sm:text-left md:col-span-4 lg:col-span-2">
           <p className="text-2xl font-extrabold text-gray-900">Stay in Touch</p>
-
+          
           <div className="mx-auto mt-8 max-w-md sm:ms-0">
             <p className="lg:text-left  leading-relaxed text-gray-500 ltr:sm:text-left rtl:sm:text-right">
               "Connect with us today! Reach out for inquiries, collaborations, or just to say hello. We're here to listen and assist."</p>
-
+             
             <form onSubmit={handleSubscribe} className="mt-4">
               <div className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:items-start">
                 <label htmlFor="email" className="sr-only">Email</label>

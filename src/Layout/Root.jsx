@@ -13,9 +13,6 @@ import 'animate.css';
 export const Root = () => {
     return (
         <div className='container mx-auto'>
-            <Helmet>
-                <title>Blogging Voyage | Home</title>
-            </Helmet>
             <BannerHead></BannerHead>
             <Navbar></Navbar>
             <div className='container mx-auto'>

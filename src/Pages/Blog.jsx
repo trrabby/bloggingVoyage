@@ -62,7 +62,7 @@ export const Blog = ({ item }) => {
                     <hr />
 
                     <p className='flex items-center gap-2 text-right mr-2 font-semibold'> <TbCategory /> Category: {category}</p>
-                    <p className='flex items-center gap-2 text-right mr-2 font-semibold'> <TbCategory /> {email}</p>
+                    {/* <p className='flex items-center gap-2 text-right mr-2 font-semibold'> <TbCategory /> {email}</p> */}
 
 
                 </div>

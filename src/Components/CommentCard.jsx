@@ -4,7 +4,7 @@ export const CommentCard = ({comment}) => {
 
     const {commentData, postId, commenter_email, commenter_name, commenter_pic, creation_time} = comment
     return (
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1000">
             <div className='shadow-accent shadow-sm hover:shadow-accent hover:shadow-lg rounded-lg bg-[#7dbdbdbb] text-white'>
                 <a
                     className="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"

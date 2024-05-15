@@ -36,6 +36,9 @@ export const BlogDetails = () => {
         // console.log(e)
         e.preventDefault();
         let commentData = e.target.textarea.value;
+        if(!commentData){
+            return toast.error('Please write something')
+        }
         const comment = {
             'commentData': commentData,
             'postId': _id,
@@ -57,7 +60,7 @@ export const BlogDetails = () => {
                 const { data } = await axiosSecure.post('/comments', comment)
                 if (data.insertedId) {
                     toast.success('Commented Successfully')
-                    e.target.textarea.value = " ";
+                    e.target.textarea.value="";
                     refetch()
                     // navigate('/allBlogs');
 
@@ -80,9 +83,9 @@ export const BlogDetails = () => {
     }
     return (
         <div className='mt-5'>
-            {/* <Helmet>
-                <title>Blogging Voyage | Blog Details{_id}</title>
-            </Helmet> */}
+            <Helmet>
+                <title>Blogging Voyage | Blog Details</title>
+            </Helmet>
             <div className="flex lg:flex-row flex-col  card card-compact lg:w-full w-10/12 mx-auto bg-base-100 shadow-xl rounded-2xl cursor-text  h-full border border-blue-200 mb-5">
                 <div data-aos="fade-up" data-aos-duration="1000" className='lg:w-8/12'>
                     <figure><img className='md:max-h-[calc(100vh-1px)] max-h-[calc(100vh-150px)]  
@@ -151,6 +154,7 @@ export const BlogDetails = () => {
                                         id="description"
                                         placeholder="Start typing here..."
                                         rows={6}
+                                        defaultValue={' '}
                                         name='textarea'
                                     />
                                 </div>
@@ -164,7 +168,7 @@ export const BlogDetails = () => {
 
                     </div>
 
-                    <div data-aos="fade-up" data-aos-duration="1000" className='flex flex-col gap-3 lg:w-8/12 w-full'>
+                    <div  className='flex flex-col gap-3 lg:w-8/12 w-full'>
                         {
                             comments?.map(comment => <CommentCard key={comment._id} comment={comment}></CommentCard>)
                         }

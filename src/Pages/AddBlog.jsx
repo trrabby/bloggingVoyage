@@ -53,6 +53,9 @@ export const AddBlog = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Blogging Voyage | Add Blog</title>
+            </Helmet>
             <div className="lg:w-full w-10/12 mx-auto lg:min-h-[calc(100vh-170px)] bg-cover bg-center  rounded-lg mb-5 flex flex-col items-center justify-center text-center ">
                 <Helmet>
                     <title>Blogging Voyage | Add Blog</title>

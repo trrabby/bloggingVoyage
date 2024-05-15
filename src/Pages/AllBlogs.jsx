@@ -10,6 +10,7 @@ import { Blog } from './Blog'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
 import { FaArrowDownLong } from "react-icons/fa6";
+import { Helmet } from 'react-helmet-async'
 
 
 
@@ -36,7 +37,7 @@ export const AllBlogs = () => {
     return data
   }
 
-  if(isError){
+  if (isError) {
     console.log(error)
   }
 
@@ -111,6 +112,9 @@ export const AllBlogs = () => {
   return (
 
     <div >
+      <Helmet>
+        <title>Blogging Voyage | All Blogs</title>
+      </Helmet>
       <section
         className=" bg-[url(https://i.ibb.co/Csvs3Rc/photo-1600565193348-f74bd3c7ccdf.jpg)] bg-cover 
         lg:max-h-[calc(100vh-1px)] bg-center bg-no-repeat rounded-2xl my-2"
@@ -156,7 +160,7 @@ export const AllBlogs = () => {
 
         </div>
       </section>
-     
+
 
       <div className=' bg-[url(https://i.ibb.co/3BBFZwr/photo-1544716278-ca5e3f4abd8c.jpg)]  bg-cover bg-center bg-no-repeat p-5 bg-fixed text-fourth pt-10 lg:mt-10'>
         <div data-aos="zoom-in-down" data-aos-duration='1000' className='text-center lg:w-8/12 mx-auto space-y-5 my-10  text-accent'>

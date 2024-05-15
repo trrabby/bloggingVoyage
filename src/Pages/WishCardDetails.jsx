@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async';
 import { TbCategory } from 'react-icons/tb';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 
@@ -12,12 +13,12 @@ export const WishCardDetails = () => {
     const { _id, category, img_url, long_description, short_description, title } = item;
 
 
-  return (
+    return (
 
-    <div className='mt-5'>
-            {/* <Helmet>
-                <title>Blogging Voyage | Blog Details{_id}</title>
-            </Helmet> */}
+        <div className='mt-5'>
+            <Helmet>
+                <title>Blogging Voyage | Wishlist Details</title>
+            </Helmet>
             <div className="flex lg:flex-row flex-col  card card-compact lg:w-full w-10/12 mx-auto bg-base-100 shadow-xl rounded-2xl cursor-text  h-full border border-blue-200 mb-5">
                 <div data-aos="fade-up" data-aos-duration="1000" className='lg:w-8/12'>
                     <figure><img className='md:max-h-[calc(100vh-1px)] max-h-[calc(100vh-150px)]  
@@ -55,5 +56,5 @@ export const WishCardDetails = () => {
                 </div>
             </div>
         </div>
-  )
+    )
 }

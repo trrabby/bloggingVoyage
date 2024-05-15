@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Slider } from '../Components/Slider'
 import toast from 'react-hot-toast'
 import { RecentBlogs } from '../Components/RecentBlogs'
+import { Helmet } from 'react-helmet-async'
 
 const handleSubscribe = (e) => {
   e.preventDefault();
@@ -17,6 +18,9 @@ const handleSubscribe = (e) => {
 export const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>Blogging Voyage | Home</title>
+      </Helmet>
       {/* banner */}
       <section className="bg-gray-50 rounded-xl my-5">
         <div className="mx-auto max-w-screen-xl px-4 lg:flex lg:items-center">
@@ -175,7 +179,7 @@ export const Home = () => {
                 <label htmlFor="email" className="sr-only">Email</label>
 
                 <input
-                  className="w-full rounded-sm border-gray-200 px-6 py-3 shadow-sm shadow-accent"
+                  className="lg:w-full w-10/12 mx-auto rounded-sm border-gray-200 px-6 py-3 shadow-sm shadow-accent"
                   type="email"
                   placeholder="Enter your email"
                   name='subscribe'

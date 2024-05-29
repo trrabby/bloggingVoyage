@@ -7,26 +7,36 @@ import { ContextApi } from '../Providers/ContextProvider'
 
 export const Navbar = () => {
 
-    const { user, signOutfromLogin, setUser, setLoading } = useContext(ContextApi)
+    const { user, signOutfromLogin, setUser, loading } = useContext(ContextApi)
+
+    if (loading) {
+        return <p>loading</p>
+    }
 
     const [theme, setTheme] = useState("light")
+    const savedTheme= localStorage.getItem('theme')
 
     const handleToggle = (e) => {
         const value = e.target.checked
+        console.log(value)
+        console.log(theme)
+
         if (value) {
-            setTheme('dark')
+            setTheme("dark");
             localStorage.setItem('theme', "dark")
         }
-
         else {
             setTheme("light")
             localStorage.setItem('theme', "light")
+            
         }
+       
     }
 
     useEffect(() => {
         const getTheme = localStorage.getItem('theme');
-        document.querySelector('html').setAttribute('data-theme', getTheme)
+        document.querySelector('html').setAttribute('data-theme', getTheme);
+        
     }, [theme])
 
     const handleSignOut = () => {
@@ -143,7 +153,7 @@ export const Navbar = () => {
                                                             <img className='rounded-full object-center' src={user.photoURL} />
                                                         </div> :
                                                         <FaUserCircle className='w-full h-full' />
-                                                        
+
 
                                                 }
 
@@ -168,16 +178,16 @@ export const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 dark:bg-white rounded-box w-64 text-black font-bold">
                             <li>
                                 {user && <a className="justify-between hover:text-primary">
-                                    {user.displayName || "No Name Found"} 
-                                   
+                                    {user.displayName || "No Name Found"}
+
                                 </a>}
                                 {user && <a className="justify-between hover:text-primary">
-                                    {user.email || "No email Found"} 
-                                   
+                                    {user.email || "No email Found"}
+
                                 </a>}
                             </li>
                             <li><a>Settings  <span className="badge">New</span></a></li>
-                           
+
                             {user && <li><Link to={'/login'} onClick={handleSignOut} className="btn btn-ghost hover:text-primary">Sign Out</Link></li>}
                             <Link to={'/login'}>
                                 {!user && <li><button className="btn btn-ghost font-bold">Log In</button></li>}
@@ -191,7 +201,7 @@ export const Navbar = () => {
                         className="relative h-8 w-14 cursor-pointer rounded-full bg-third transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-primary"
                     >
 
-                        <input onChange={handleToggle} type="checkbox" id="AcceptConditions" className="peer sr-only" />
+                        <input onChange={handleToggle} defaultChecked={savedTheme==='dark'? true: false} type="checkbox" id="AcceptConditions" className="peer sr-only" />
 
                         <span
                             className="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-accent ring-[6px] ring-inset ring-white transition-all peer-checked:start-8 peer-checked:w-2 peer-checked:bg-accent peer-checked:ring-transparent"

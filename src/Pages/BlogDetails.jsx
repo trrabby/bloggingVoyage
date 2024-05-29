@@ -11,6 +11,7 @@ import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import { clear } from 'localforage';
 import { CommentCard } from '../Components/CommentCard';
+import { RelatedBlogs } from '../Components/RelatedBlogs';
 
 export const BlogDetails = () => {
 
@@ -36,7 +37,7 @@ export const BlogDetails = () => {
         // console.log(e)
         e.preventDefault();
         let commentData = e.target.textarea.value;
-        if(!commentData){
+        if(commentData=' '){
             return toast.error('Please write something')
         }
         const comment = {
@@ -75,11 +76,6 @@ export const BlogDetails = () => {
             }
 
         }
-
-
-
-
-
     }
     return (
         <div className='mt-5'>
@@ -173,9 +169,11 @@ export const BlogDetails = () => {
                             comments?.map(comment => <CommentCard key={comment._id} comment={comment}></CommentCard>)
                         }
                     </div>
-
+                    
                 </div>
+                
             </div>
+            <RelatedBlogs category={category}></RelatedBlogs>
         </div>
     )
 }

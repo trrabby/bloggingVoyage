@@ -10,7 +10,7 @@ export const Navbar = () => {
     const { user, signOutfromLogin, setUser, loading } = useContext(ContextApi)
 
     if (loading) {
-        return <p>loading</p>
+        return <p>loading...</p>
     }
 
     const [theme, setTheme] = useState("light")

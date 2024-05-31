@@ -23,7 +23,7 @@ export const BlogDetails = () => {
 
     const matchedUser = user.email === email
 
-    const { data: comments = [], isLoading, isError, error, refetch, } = useQuery({
+    const { data: comments = [], isLoading, isError, error, refetch } = useQuery({
         queryKey: ['allBlogs'],
         queryFn: () => blogsData(),
     })
@@ -37,7 +37,7 @@ export const BlogDetails = () => {
         // console.log(e)
         e.preventDefault();
         let commentData = e.target.textarea.value;
-        if(commentData=' '){
+        if (!e.target.textarea.value) {
             return toast.error('Please write something')
         }
         const comment = {
@@ -60,8 +60,8 @@ export const BlogDetails = () => {
             try {
                 const { data } = await axiosSecure.post('/comments', comment)
                 if (data.insertedId) {
-                    toast.success('Commented Successfully')
-                    e.target.textarea.value="";
+                    toast.success('Commented Successfully');
+                    e.target.textarea.value = " ";
                     refetch()
                     // navigate('/allBlogs');
 
@@ -124,12 +124,12 @@ export const BlogDetails = () => {
 
             </div>
             <div data-aos="fade-up" data-aos-duration="1000" className='p-5 my-10 lg:w-4/12 md:w-6/12 mx-auto rounded-xl'>
-                    <h1 className='text-center lg:text-3xl text-xl font-bold'>Comment Section</h1>
-                    <p className='text-lg text-center'>Leave your valuable comments here.</p>
+                <h1 className='text-center lg:text-3xl text-xl font-bold'>Comment Section</h1>
+                <p className='text-lg text-center'>Leave your valuable comments here.</p>
             </div>
 
             <div className='space-y-2 bg-[url(https://i.ibb.co/VWyw7Bc/premium-photo-1683262038148-2ac280407276.jpg)] bg-no-repeat bg-center bg-cover p-5 bg-fixed text-white rounded-t-lg'>
-                
+
                 <div className='flex flex-col-reverse md:flex-row justify-between pt-10 gap-3'>
                     <div className='lg:w-6/12 w-full border-r-2 border-fourth '>
                         <Card data-aos="fade-up" data-aos-duration="1000" className="mx-auto max-w-lg sticky top-16 ">
@@ -164,14 +164,14 @@ export const BlogDetails = () => {
 
                     </div>
 
-                    <div  className='flex flex-col gap-3 lg:w-8/12 w-full'>
+                    <div className='flex flex-col gap-3 lg:w-8/12 w-full'>
                         {
                             comments?.map(comment => <CommentCard key={comment._id} comment={comment}></CommentCard>)
                         }
                     </div>
-                    
+
                 </div>
-                
+
             </div>
             <RelatedBlogs category={category}></RelatedBlogs>
         </div>
